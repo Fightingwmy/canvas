@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo">{{ fullName }}</div>
+</body>
+  <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+  	var vm = new Vue({
+	  el: '#demo',
+	  data: {
+	    firstName: 'Foo',
+	    lastName: 'Bar'
+	  },
+	  computed: {
+	    fullName: function () {
+	      return this.firstName + ' ' + this.lastName + 'newVue'
+	    }
+	  }
+	})
+  </script>
+</html>

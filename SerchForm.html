@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>搜索框制作</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        .bg-div{
+            background-image: url(images/river.jpg);
+            width: 1228px;
+            height: 690px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo {
+            background-image: url(images/logo.png);
+            width: 107px;
+            height: 53px;
+            float: left;
+            margin: -4px 18px 0 0;
+        }
+
+        form {
+            float: right;
+            background-color: #fff;
+            padding: 5px;
+        }
+
+        .search-input-text {
+            border: 0;
+            float: left;
+            height: 25px;
+            line-height: 25px;
+            outline: none;
+            width: 350px;
+            font-size: 16px;
+        }
+
+        .search-input-button {
+            border: 0;
+            background-image: url(images/search-button.png);
+            width: 29px;
+            height: 29px;
+            float: left;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 200px;
+            left: 300px;
+        }
+
+        #search-suggest {
+            width: 388px;
+            background-color: #fff;
+            border: 1px solid #999;
+            display: none;
+        }
+
+        .suggest ul {
+            list-style: none;
+        }
+
+        .suggest ul li {
+            padding: 3px;
+            font-size: 14px;
+            line-height: 25px;
+            cursor: pointer;/*手型*/
+        }
+
+        .suggest ul li:hover {
+            text-decoration: underline;
+            background-color: #e5e5e5;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="bg-div">
+        <div class="search-box">
+            <div class="logo"></div>
+            <form id="search-form">
+                <input type="text" class="search-input-text" autocomplete="off" name="q" id="search_input" x-webkit-speech="语音输入功能，默认设为空即可"/>
+                <input type="submit" class="search-input-button" value="" id="search_submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="suggest" id="search-suggest">
+        <ul id="search-result">
+            <li>搜索结果1</li>
+            <li>搜索结果2</li>
+        </ul>
+    </div>
+
+<script>//jQuery实现功能
+$(function() {
+    //键盘事件
+    $("#search_input").bind("keyup", function() {
+        var searchText = $("#search_input").val();
+        /*$.get( "http://api.bing.com/qsonhs.aspx?q="+searchText , function(data) {
+
+                console.log(data);
+
+                var d = data.AS.Results[0].Suggests;
+                var html = "";
+                for(var i = 0; i < d.length; i++) {
+                    html += "<li>"+d[i].Txt+"</li>";
+                }
+                $("#search-result").html(html);
+
+
+                $("#search-suggest").show().css({
+                    top : $("#search-form").offset().top + $("#search-form").height()+10,
+                    left : $("#search-form").offset().left,
+                    position : "absolute",
+                });
+            }
+            , "json");*/
+
+        $.ajax({
+            type: "GET",
+            url: "http://api.bing.com/qsonhs.aspx?type=cb&q=" + searchText,
+            dataType: "jsonp",
+            jsonp: 'cb',
+            success: function(data) {
+                if(data == null) {
+                    $("#search-suggest").hide();
+                    return false;
+                }
+                if(data.AS == null) {
+                    $("#search-suggest").hide();
+                    return false;
+                }
+                if(data.AS.Results == null) {
+                    $("#search-suggest").hide();
+                    return false;
+                }
+                if(data.AS.Results[0] == null) {
+                    $("#search-suggest").hide();
+                    return false;
+                }
+                if(data.AS.Results[0].Suggests == null) {
+                    $("#search-suggest").hide();
+                    return false;
+                }
+
+                var d = data.AS.Results[0].Suggests;
+                var html = "";
+
+                for(var i = 0; i < d.length; i++) {
+
+                    html += "<li>" + d[i].Txt + "</li>";
+                }
+                $("#search-result").html(html);
+
+                $("#search-suggest").show().css({
+                    top: $("#search-form").offset().top + $("#search-form").height() + 10,
+                    left: $("#search-form").offset().left,
+                    position: "absolute",
+                });
+            }
+        })
+    });
+
+    $(document).bind("click", function() {
+        $("#search-suggest").hide();
+    });
+
+    //事件代理  --》鼠标点击事件
+    $(document).delegate("li", "click", function() {
+        var keyword = $(this).text();
+        location.href = "http://cn.bing.com/search?q=" + keyword;
+    });
+
+    $("#search-form").submit(function() {
+        var keyword = $("#search_input").val();
+        console.log("word=" + keyword);
+        //if (keyword == null) {return false;}
+        location.href = "http://cn.bing.com/search?q=" + keyword;
+    });
+});
+</script>
+</body>
+</html>

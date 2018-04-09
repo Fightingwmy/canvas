@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展开与收起效果</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        var h=0;
+        function addH(){
+            if (h < 300) { //如果广告层高度小于300，h自增5px
+                h +=5;
+                document.getElementById("ad-div").style.width=h + "px"; //把高度赋值给广告层高度
+            }else {
+                return; //否则就退出函数
+            }
+            setTimeout("addH()",30);//自己调用自己的函数
+        }
+        window.onload=function showAds(){ //文档加载的时候调用函数
+            addH();
+            setTimeout("subH()",5000);
+        }
+        function subH(){
+            if (h > 0) {
+                h -=5;
+                document.getElementById("ad-div").style.width=h + "px";
+            }else {
+                document.getElementById("ad-div").style.display="none";
+                return;
+            }
+            setTimeout("subH()",30);
+        }
+
+        $(document).ready(function(){
+            $(".btn-slide").toggle(function(){ //绑定一个toggle事件  第一个函数
+                $(this).text("收起-"); //改变文本的内容
+                $("#hpn").show(1000); //把隐藏的元素显示出来
+            },function(){ //第二个函数
+                $(this).text("更多选项+"); //改变文本的内容
+                $("#hpn").hide(1000); //把显示的元素隐藏
+            });
+        });
+
+    </script>
+    <style>
+        body {
+            margin:0 auto;
+            padding: 0;
+        }
+        #ad-div {
+            margin:0 auto;
+            padding: 5px;
+            background: red;
+            width: auto;
+            /*display: block;*/
+            height: 200px;
+            text-align: center;
+            color: grey;
+        }
+        .pn {
+            margin:0 auto;
+            padding: 10px;
+            background: grey;
+            width: auto;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #000;
+        }
+        .palcefolder {
+            margin: 30px;
+        }
+        a:focus
+        {
+            outline: none;
+        }
+        #pn2 {
+            margin: 0 auto;
+            padding: 5px;
+            font-size: 9pt;
+            width: 600px;
+            height: auto;
+            display: block;
+            background: #e8e8e8;
+        }
+        .slide {
+            margin: 0;
+            padding: 0;
+            width: 600px;
+            border-top: 4px solid grey;
+            margin:0 auto;
+        }
+        .btn-slide
+        {
+            background: gray;
+            text-align: center;
+            width: 120px;
+            height: 30px;
+            padding: 10px 0 0 0;
+            margin: 0 auto;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad-div">
+        <h1>展示广告</h1>
+        <h2>欢迎您</h2>
+    </div>
+    <div class="pn">
+        happy!
+    </div>
+
+    <div class="palcefolder"></div>
+
+    <div id="pn2">
+        <p>手机 - 商品筛选</p>
+        <p>
+            网络： 移动4G（TD-LTE ） 联通4G（TD-LTE） 联通3G（WCDMA）
+        </p>
+        <div id="hpn" style="display: none;">
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
+            <p>
+                特点： JDPhone计划 "0"元购机 防水 长待机 1080P全高清屏
+            </p>
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
+        </div>
+    </div>
+    <p class="slide">
+        <a href="#" id="strHref" class="btn-slide">更多选项+</a>
+    </p>
+</body>
+</html>

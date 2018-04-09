@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>距离高考还有多少天</title>
+    <style>
+        body {
+            background: url(images/macbook-big.jpg) top center no-repeat;
+        }
+        #showTime {
+            position: absolute;
+            top:200px;
+            left: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="showTime">显示当前时间</div>
+    <script>
+        window.onload=function(){
+            var curtTime = new Date();
+            var endTime = new Date("2017,6,6");
+            var leftTime = Math.ceil((endTime.getTime() - curtTime.getTime())/(24*60*60*1000));
+            document.getElementById("showTime").innerHTML = "距离高考还有"+leftTime+"天";
+        }
+    </script>
+</body>
+</html>

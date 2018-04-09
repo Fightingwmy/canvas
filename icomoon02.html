@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>font&css制作小图标2</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/fontCSS.css">
+</head>
+<body>
+    <ul class="layout">
+        <li><i class="icon icon-like shadow"></i></li>
+        <li><i class="icon icon-spinner spinner"></i></li>
+        <li><i class="icon icon-heart love"></i></li>
+    </ul>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(".love").on("click",function(){
+            var $this = $(this);
+            $this.addClass("btn-activated")
+            setTimeout(function(){
+                $this.removeClass("btn-activated")
+            },500)
+        })
+    </script>
+
+</body>
+</html>

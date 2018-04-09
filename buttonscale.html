@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮特效</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0;
+        }
+        .submit {
+            background: #ffba00;
+            color: #fff;
+            border-radius: 4px;
+            font: 600 1.08em/1em 'Roboto', sans-serif;
+            padding: 0.8em 1.6em;
+            display: inline-block;
+            border: 1px solid #ffba00;
+            width: 200px;
+            height: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .submit:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        .submit:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #009bb3;
+            top: 0;
+            left: 0;
+            right: 0;
+            -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 50%;
+            -ms-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+            -webkit-transition: all 300ms linear 0s;
+            transition: all 300ms linear 0s;
+            z-index: -1;
+        }
+        .submit:hover:before, .submit:focus:before {
+              -webkit-transform: scaleX(1);
+              -ms-transform: scaleX(1);
+              transform: scaleX(1);
+            }
+    </style>
+</head>
+<body>
+<a href="#" class="submit">Contact Us <i class="fa fa-arrow-right"></i></a>
+</body>
+</html>

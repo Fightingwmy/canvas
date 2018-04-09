@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ff</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/egongsi.css">
+    <link rel="stylesheet" href="css/pageswitch.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                nowtop = parseInt($(document).scrollTop());
+                $('.main-im').css('top', nowtop + 205 + 'px')
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div class="main-im" style="overflow: hidden;">
+        <div id="open_im" class="open_im"></div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close_im">
+                <a href="javascript:void(0);"></a>
+            </div>
+            <a href="javascript:;" class="im-qq qq-a">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c">
+                    <img class="img-qq" src="images/qq.png" alt="">
+                </div>
+                <span> QQ在线咨询</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

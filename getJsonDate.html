@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax 获取json数据格式</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>点击按钮获取JSON数据</div>
+    <input type="button" id="button" value="确定" />
+    <div id="result"></div>
+    <script>
+        $(document).ready(function(){
+            $('#button').click(function(){
+                var $id = $("#result");
+                var ajaxTimeoutTest = $.ajax({
+                    type:"GET",
+                    url:"music.json",
+                    data:$id.serialize(),
+                    dataType:"json",
+                    beforeSend: function() {
+                        alert(0);
+                    },
+                    success:function(data){
+                        var music="<ul>";
+                        //i表示在data中的索引位置，n表示包含的信息的对象
+                        $.each(data,function(i,n){
+                        //获取对象中属性为optionsValue的值
+                            music+="<li>"+n["optionValue"]+"</li>";
+                        });
+                        music+="</ul>";
+                        $('#result').append(music);
+                        alert($id.serialize());
+                    },
+                    complete: function(XMLHttpRequest, status) {
+                        if (status == 'timeout') {
+                            ajaxTimeoutTest.abort();//终止ajax请求
+                            alert("请求超时！")
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

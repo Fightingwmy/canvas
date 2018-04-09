@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>手风琴效果</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        body,ul,li,p {margin: 0;padding: 0}
+        ul,ol {list-style: none;}
+        .home-subjects-v2{height:128px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #d3d3d3;border-color:rgba(0,0,0,.12);overflow:hidden;width:938px;margin-top:12px;background:#fff}
+        .home-subjects-v2 ul{width:1000px}
+        .home-subjects-v2 li{width:156px;height:128px;float:left;overflow:hidden;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-o-transition:all .1s linear;-ms-transition:all .1s linear;transition:all .1s linear}
+        .home-subjects-v2 li *{-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-o-transition:all .1s linear;-ms-transition:all .1s linear;transition:all .1s linear}
+        .home-subjects-v2 li a{width:156px;height:128px;display:block;position:relative;cursor:pointer;text-decoration:none;overflow:hidden}
+        .home-subjects-v2 li a:hover{position:absolute}
+        .home-subjects-v2 li a:hover .mask{-ms-filter:"alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0;-webkit-transition:opacity .2s ease-in;-moz-transition:opacity .2s ease-in;-o-transition:opacity .2s ease-in;-ms-transition:opacity .2s ease-in;transition:opacity .2s ease-in}
+        .home-subjects-v2 li img{height:72px;width:117px;position:absolute;bottom:0;right:-13px}
+        .home-subjects-v2 li .line{height:128px;width:0;font-size:0;border-right:1px dashed #cacaca;position:absolute;right:0;top:4px}
+        .home-subjects-v2 li .info{position:absolute;top:0;left:0;width:136px;padding:4px 10px}
+        .home-subjects-v2 li .info h3{font-size:14px;font-weight:700}
+        .home-subjects-v2 li .info p{color:#868686;font-size:12px;overflow:hidden;width:136px;height:22px;line-height:22px}
+        .home-subjects-v2 li .info p.price{font-size:14px;font-style:italic;color:#fa2a5d;height:35px}
+        .home-subjects-v2 li .info p.price strong{font-size:22px;font-family:Arial;padding-right:2px}
+        .home-subjects-v2 li .info p.price i{font-size:14px}
+        .home-subjects-v2 li .info p.more{display:none}
+        .home-subjects-v2 .mask{height:128px;width:156px;display:block;position:absolute;top:0;left:0;background:#000;-ms-filter:"alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0;-webkit-transition:opacity .2s ease-in;-moz-transition:opacity .2s ease-in;-o-transition:opacity .2s ease-in;-ms-transition:opacity .2s ease-in;transition:opacity .2s ease-in;_display:none!important}
+        .home-subjects-v2 .big{width:314px}
+        .home-subjects-v2 .big a{width:314px}
+        .home-subjects-v2 .big img{width:195px;height:120px;right:0;bottom:0}
+        .home-subjects-v2 .big .info{width:294px}
+        .home-subjects-v2 .big .info h3{font-size:18px}
+        .home-subjects-v2 .big .info p{font-size:14px;width:166px}
+        .home-subjects-v2 .big .info p.price{font-size:16px;padding-top:7px}
+        .home-subjects-v2 .big .info p.price strong{font-size:28px}
+        .home-subjects-v2 .big .info p.price i{font-size:16px}
+        .home-subjects-v2 .big .info p.more{display:block;font-size:12px;color:#ff2a5b}
+        .home-subjects-v2 .big .mask{width:314px}
+        .home-subjects-v2:hover .mask{-ms-filter:"alpha(Opacity=15)";filter:alpha(opacity=15);opacity:.15;-webkit-transition:opacity .2s ease-in;-moz-transition:opacity .2s ease-in;-o-transition:opacity .2s ease-in;-ms-transition:opacity .2s ease-in;transition:opacity .2s ease-in}
+    </style>
+</head>
+<body>
+    <div id="subject" class="home-subjects-v2">
+    <ul>
+        <li>
+            <a>
+                <img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+                <div class="info">
+                    <h3 style="color:#f62368">鑱氱編濡�</h3>
+                    <p>鑱氱編濡�1/2鍛ㄥ勾搴�</p>
+                    <p class="price"><strong>1</strong><i>鎶樿捣</i></p>
+                    <p class="more">杩涘叆涓撻鎶㈣喘 &gt; </p>
+                </div>
+                <s class="line"></s>
+                <i class="mask"></i>
+            </a>
+        </li>
+        <li class="big">
+            <a>
+                <img src="http://gtms01.alicdn.com/tps/i1/T1qxGLFsVbXXbA5QAK-195-120.jpg_Q90.jpg">
+                <div class="info">
+                    <h3 style="color:#ff578a">Baby璐�</h3>
+                    <p>瀹濆疂璇ユ崲瑁呬簡锛屾柊鍝佹姠璐�</p>
+                    <p class="price"><strong>2.5</strong><i>鎶樿捣</i></p>
+                    <p class="more">杩涘叆涓撻鎶㈣喘 &gt; </p>
+                </div>
+                <s class="line"></s>
+                <i class="mask"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="http://gtms02.alicdn.com/tps/i2/T1KOSNFxXaXXbA5QAK-195-120.jpg_Q90.jpg">
+                <div class="info">
+                    <h3 style="color:#6d3fa7">鏃惰鍥�</h3>
+                    <p>鏃跺皻鏄ヨ锛屾竻鏂板皬娼惌閰�</p>
+                    <p class="price"><strong>1</strong><i>鎶樿捣</i></p>
+                    <p class="more">杩涘叆涓撻鎶㈣喘 &gt; </p>
+                </div>
+                <s class="line"></s>
+                <i class="mask"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="http://gtms04.alicdn.com/tps/i4/T1CCeIFrVbXXbA5QAK-195-120.jpg_Q90.jpg">
+                <div class="info">
+                <h3 style="color:#d61939">TV璐�</h3>
+                <p>琛ヨ鍏婚 灏辫繖涔堢畝鍗�</p>
+                <p class="price"><strong>2.6</strong><i>鎶樿捣</i></p>
+                <p class="more">杩涘叆涓撻鎶㈣喘 &gt; </p>
+                </div>
+                <s class="line"></s><i class="mask"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="http://gtms01.alicdn.com/tps/i1/T1jmKJFyJbXXbA5QAK-195-120.jpg_Q90.jpg">
+                <div class="info">
+                <h3 style="color:#6f9400">鑱氭柊椴�</h3>
+                <p>鏈€绾鐨勬嘲鍥介绫�</p>
+                <p class="price"><strong>5</strong><i>鎶樿捣</i></p>
+                <p class="more">杩涘叆涓撻鎶㈣喘 &gt; </p>
+                </div>
+                <i class="mask"></i>
+            </a>
+        </li>
+    </ul>
+    </div>
+    <script type="text/javascript">
+        function mouseover(e){
+            var list = $('#subject li');
+            var target = $(e.target).parents('li');
+
+            list.removeClass('big');
+            target.addClass('big');
+        }
+
+        (function(){
+            var outer = $('#subject');
+            outer.find('li').on('mouseover', mouseover);
+        })()
+
+    </script>
+</body>
+</html>

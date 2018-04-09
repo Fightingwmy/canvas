@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用正则表达式进行表单验证</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        p {
+            display: inline-block;
+        }
+        body {
+            margin: 0 auto;
+            padding: 0;
+            font-size: 12px;
+            color: #aaa;
+        }
+        input {
+            vertical-align: middle;
+        }
+        label {
+            vertical-align: middle;
+        }
+        input:focus {
+            outline: none;
+        }
+        form {
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        form div {
+            overflow: hidden;
+            clear: both;
+        }
+        form div label {
+            float: left;
+            clear: both;
+        }
+        form div label .text {
+            width: 152px;
+            height: 26px;
+            padding: 0 2px;
+            border:1px solid #ccc;
+        }
+        form div label b {
+            font-weight: normal;
+            font-size: 12px;
+            color: #ccc;
+            visibility: hidden;
+        }
+        form div em {
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+            vertical-align: middle;
+            font-size: normal;
+            width: 53px;
+            height: 15px;
+            line-height: 15px;
+            background: #FFD099;
+        }
+        form div .active{
+            background: #FF6600;
+        }
+        div span{
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+        }
+        .msg {
+            line-height: 12px;
+            color: #999;
+            float: left;
+            margin-left: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+        //定义两个调用函数
+        function getLength(str){
+            //replace()有两个参数，即两个参数进行替换，\x00-xff表示单字节，xx代表两个字母。一个汉字为两个字节
+            return str.replace(/[^\x00-xff]/g,"xx").length;
+        }
+        function findStr(str,n){ //传入两个参数，第一个写入的字符串，第二个是具体的字符
+            var tmp=0; //定义一个变量来存放相同字符的次数，如果次数等于字符串的长度，那么则输入的字符为相同字符
+            for(var i=0;i<str.length;i++){
+                if(str.charAt(i)==n){
+                    tmp++;
+                }
+                return tmp;
+            }
+        }
+        window.onload=function () {
+            var aInput=document.getElementsByTagName("input");
+            var oName=aInput[0];
+            var pwd=aInput[1];
+            var pwd2=aInput[2];
+            var aP=document.getElementsByTagName("p");
+            var name_msg=aP[0];
+            var pwd_msg=aP[1];
+            var pwd2_msg=aP[2];
+            var count=document.getElementById("count");
+            var aEm=document.getElementsByTagName("em");
+            var name_length=0;
+            //用户名验证的要求
+            //1、数字、字母(不分大小写)、汉字、下划线  \w代码数字、字母、下划线 \u4e00-\u9fa5代码汉字
+            //2、5-25个字符，推荐使用中文会员名
+
+            //用户名
+            oName.onfocus=function () {
+                name_msg.style.display="block";
+                name_msg.innerHTML="5-25个字符，一个汉字为两个字符，推荐使用中文会员名。";
+            }
+            oName.onkeyup=function () {
+                count.style.visibility="visible";
+                name_length=getLength(this.value);
+                count.innerHTML=name_length+"个字符";
+                if(name_length==0){
+                    count.style.visibility="hidden";
+                }
+            }
+            oName.onblur=function () {
+                //含有非法字符
+                var re=/[^\w\u4e00-\u9fa5]/g;//匹配非法字符
+                if(re.test(this.value)){
+                    name_msg.innerHTML='含有非法字符';
+                }
+                //不能为空
+                else if(this.value==""){
+                    name_msg.innerHTML='不能为空';
+                }
+                //长度超过25个字符
+                else if(name_length>25){
+                    name_msg.innerHTML='长度超过25个字符';
+                }
+                //长度少于6个字符
+                 else if(name_length<6){
+                    name_msg.innerHTML='长度少于6个字符';
+                }
+                //OK
+                else {
+                    name_msg.innerHTML='OK';
+                }
+
+            }
+
+            //密码
+            pwd.onfocus=function (){
+                pwd_msg.style.display="block";
+                pwd_msg.innerHTML="6-26个字符，请使用字母加数字或符号的组合密码，不能单独使用字母、数字或符号.";
+            }
+            pwd.onkeyup=function (){
+                //大于5个字符“中”
+                if(this.value.length>5){
+                    aEm[1].className="active";
+                    pwd2.removeAttribute("disabled");
+                    pwd2_msg.style.display="block";
+                }else {
+                    aEm[1].className="";
+                    pwd2.setAttribute("disabled");
+                    pwd2_msg.style.display="none";
+                }
+                //大于10个字符“强”
+                if(this.value.length>10){
+                    aEm[2].className="active";
+                }else {
+                    aEm[2].className="";
+                }
+            }
+            pwd.onblur=function (){
+                var m=findStr(pwd.value,pwd.value[0]);
+                var re_n=/[^\d]/g;
+                var re_t=/[^a-zA-Z]/g;
+                //不能为空
+                if(this.value==""){
+                    pwd_msg.innerHTML="不能为空。";
+                }
+                //不能用相同字符
+                else if(m==this.value.length){
+                    pwd_msg.innerHTML="不能为相同字母";
+                }
+                //长度应为6-16个字符
+                else if(this.value.length<6 || this.value.length>16){
+                    pwd_msg.innerHTML="长度应为6-16个字符";
+                }
+                //不能全为数字
+                else if(!re_n.test(this.value)){
+                    pwd_msg.innerHTML="不能全为数字";
+                }
+                //不能全为字母
+                else if(!re_t.test(this.value)){
+                    pwd_msg.innerHTML="不能全为字母";
+                }
+                //OK
+                else {
+                    pwd_msg.innerHTML="OK";
+                }
+            }
+            //确认密码
+            pwd2.onblur=function (){
+                if(this.value!=pwd.value){
+                    pwd2_msg.innerHTML="两次输入的密码不一致";
+                }else {
+                    pwd2_msg.innerHTML="OK";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="post">
+            <div>
+                <label><span>会员名：</span><input type="text" class="text" placeholder="请设置用户名" /></label>
+                <p class="msg"><i class="ati"></i>5-25个字符，一个汉字为两个字符，推荐使用中文会员名。</p>
+            </div>
+
+            <div><label><span></span><b id="count">0个字符</b></label></div>
+
+            <div>
+                <label><span>登录密码：</span><input type="password" class="text" placeholder="请设置密码" /></label>
+                <p class="msg"><i class="ati"></i>5-25个字符，一个汉字为两个字符，推荐使用中文会员名。</p>
+            </div>
+
+            <div style="margin: 3px 0 10px 0">
+                <label><span></span><em class="active">弱</em><em>中</em><em>强</em></label>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label><span>确认密码：</span><input type="password" class="text" disabled="" /></label>
+                <p class="msg"><i class="ati"></i>请再输入一次！</p>
+            </div>
+
+            <div>
+                <button class="btn btn-success" style="margin-left: 104px;;">注册</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息滚动效果制作</title>
+    <style>
+        body {
+            margin:0;
+            padding: 0;
+        }
+        ul,li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .srollbox {
+            width: 400px;
+            height: 200px;
+            border: 3px solid #eee;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul li {
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="srollbox" id="srollbox">
+        <ul class="con1" id="con1">
+            <li>1.信息滚动效果制作  2016-11-17</li>
+            <li>2.信息滚动效果制作  2016-11-17</li>
+            <li>3.信息滚动效果制作  2016-11-17</li>
+            <li>4.信息滚动效果制作  2016-11-17</li>
+            <li>5.信息滚动效果制作  2016-11-17</li>
+            <li>6.信息滚动效果制作  2016-11-17</li>
+            <li>7.信息滚动效果制作  2016-11-17</li>
+            <li>8.信息滚动效果制作  2016-11-17</li>
+            <li>9.信息滚动效果制作  2016-11-17</li>
+        </ul>
+        <ul class="con2" id="con2"></ul>
+    </div>
+    <table style="height: 300px;border:1px solid #ccc;">
+    	<tbody>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    		<tr style="height: 20px;"><td>qqq</td></tr>
+    	</tbody>
+    </table>
+    <script type="text/javascript">
+
+    
+        var scrollcon=document.getElementById("srollbox");
+        var con1=document.getElementById("con1");
+        var con2=document.getElementById("con2");
+        con2.innerHTML=con1.innerHTML;
+        function ScrollUp(){
+            if(scrollcon.scrollTop>=con1.offsetHeight){
+                scrollcon.scrollTop=0;
+            }else {
+                scrollcon.scrollTop++;
+            }
+        }
+        var time=50;
+        var scrollTime=setInterval("ScrollUp()",time);
+        scrollcon.onmouseover=function (){
+            clearInterval(scrollTime);
+        }
+        scrollcon.onmouseout=function (){
+            scrollTime=setInterval("ScrollUp()",time);
+        }
+    
+        
+    </script>
+</body>
+</html>

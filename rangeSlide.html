@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		/*横条样式*/  
+input[type=range] {  
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  width: 300px;  
+  background: -webkit-linear-gradient(#63676b, #63676b) no-repeat, #c0c2c3;/*设置左边颜色为#63676b，右边颜色为#c0c2c3*/  
+  background-size: 0% 100%;/*设置左右宽度比例*/  
+  height: 3px;/*横条的高度*/  
+}  
+/*拖动块的样式*/  
+input[type=range]::-webkit-slider-thumb {  
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  height: 7px;/*拖动块高度*/  
+  width: 7px;/*拖动块宽度*/  
+  background: #63676b;/*拖动块背景*/  
+  border-radius: 50%; /*外观设置为圆形*/  
+  border:1px #63676b solid; /*设置边框*/  
+}  
+input[type=range]:focus {
+    outline: none;
+}
+	</style>
+</head>
+<body>
+	
+            <input type="range" value="0" id="input1">
+            <input type="range" value="0">
+            <input type="range" value="0">
+        
+	<script>
+		$.fn.RangeSlider = function(cfg){
+    this.sliderCfg = {
+        min: cfg && !isNaN(parseFloat(cfg.min)) ? Number(cfg.min) : null, 
+        max: cfg && !isNaN(parseFloat(cfg.max)) ? Number(cfg.max) : null,
+        step: cfg && Number(cfg.step) ? cfg.step : 1,
+        callback: cfg && cfg.callback ? cfg.callback : null
+    };
+
+    var $input = $(this);
+    var min = this.sliderCfg.min;
+    var max = this.sliderCfg.max;
+    var step = this.sliderCfg.step;
+    var callback = this.sliderCfg.callback;
+
+    $input.attr('min', min)
+        .attr('max', max)
+        .attr('step', step);
+
+    $input.bind("input", function(e){
+        $input.attr('value', this.value);
+        $input.css( 'background-size', this.value + '% 100%' );
+
+        if ($.isFunction(callback)) {
+            callback(this);
+        }
+    });
+};
+	</script>
+	<script>
+		var change = function($input) {
+                /*内容可自行定义*/
+                console.log("123");
+            }
+		$('#input1').RangeSlider({ min: 0,   max: 100,  step: 0.01,  callback: change});
+	</script>
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>易公司-郑州工商注册_郑州注册公司_郑州代理记帐_郑州商标注册</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/egongsi.css">
+    <link rel="stylesheet" href="css/pageswitch.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script charset="UTF-8" src="http://goutong.baidu.com/site/234/ddd71d9de3fd2f3603b1f345b220cdd4/b.js?siteId=10228023"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".main_visual").hover(function(){
+                $("#btn_prev,#btn_next").fadeToggle();
+            });
+
+            $dragBln = false;
+
+            $(".main_image").touchSlider({
+                flexible : true,
+                speed : 200,
+                btn_prev : $("#btn_prev"),
+                btn_next : $("#btn_next"),
+                paging : $(".flicking_con a"),
+                counter : function (e){
+                    $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+                }
+            });
+
+            $(".main_image").bind("mousedown", function() {
+                $dragBln = false;
+            });
+
+            $(".main_image").bind("dragstart", function() {
+                $dragBln = true;
+            });
+
+            $(".main_image a").click(function(){
+                if($dragBln) {
+                    return false;
+                }
+            });
+
+            timer = setInterval(function(){
+                $("#btn_next").click();
+            }, 5000);
+
+            $(".main_visual").hover(function(){
+                clearInterval(timer);
+            },function(){
+                timer = setInterval(function(){
+                    $("#btn_next").click();
+                },5000);
+            });
+
+            $(".main_image").bind("touchstart",function(){
+                clearInterval(timer);
+            }).bind("touchend", function(){
+                timer = setInterval(function(){
+                    $("#btn_next").click();
+                }, 5000);
+            });
+            $("#fwqynum").prop('number',0).animateNumber({number:8528},2000);
+            $("#snzcnum").prop('number',0).animateNumber({number:5923},2000);
+            $("#flfwnum").prop('number',0).animateNumber({number:3289},2000);
+
+            $(window).scroll(function(){
+                nowtop = parseInt($(document).scrollTop());
+                $('.main-im').css('top', nowtop + 205 + 'px')
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div class="topbar">
+        <div class="container">
+            <div class="top-contact l">
+                <ul>
+                    <li><i class="icon music"></i><a href="#">在线客服</a></li>
+                    <li>
+                        <i class="icon weixin"></i><a href="#">关注我们</a>
+                        <img src="images/footer-qrcode.jpg" alt="" width="100" height="100">
+                    </li>
+                </ul>
+            </div>
+            <div class="menu r">
+                <ul>
+                    <li class="l"><a href="">欢迎登录</a></li>
+                    <li class="l"><a href="">免费注册</a></li>
+                    <li class="l"><a href="">帮助中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <div class="logo l"><a href="#"><img src="images/logo02.png" alt=""></a></div>
+            <div class="city">
+                <ul>
+                    <li>
+                        <a href="#" class="titles fred">北京市<i class="icon title"></i></a>
+                        <ul class="city-content">
+                            <i class="icon liicon"></i>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                            <li><a href="#">北京市</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tel r"><i class="icon tele"></i><span>400-888-7789</span></div>
+        </div>
+    </div>
+    <div class="nav" style="border-bottom: 2px solid #c7161c; width: 100%;">
+        <div class="container clearfix">
+            <div class="menu-con">
+                <div class="menu-title">全部服务分类</div>
+                <div class="menu-content">
+                    <ul>
+                        <li>
+                            <div class="navh mt25 clearfix">
+                                <i class="icon navicon n1"></i>
+                                <a href="#" class="fwhite">工商注册</a>
+                            </div>
+                            <div class="pt5">
+                                <a href="#" class="f14 fwhite mr10">公司注册</a>
+                                <a href="#" class="f14 fwhite">公司变更</a>
+                            </div>
+                            <div class="listbox list1 clearfix">
+                                <div class="listbox-left">
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司变更</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司年报</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="listbox-right">
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="navh mt25 clearfix">
+                                <i class="icon navicon n1"></i>
+                                <a href="#" class="fwhite">工商注册</a>
+                            </div>
+                            <div class="pt5">
+                                <a href="#" class="f14 fwhite mr10">公司注册</a>
+                                <a href="#" class="f14 fwhite">公司变更</a>
+                            </div>
+                            <div class="listbox list2">
+                                <div class="listbox-left">
+                                    <dl class="clearfix">
+                                        <dt>代理记账</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>税务登记</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>审计</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="listbox-right">
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="navh mt25 clearfix">
+                                <i class="icon navicon n1"></i>
+                                <a href="#" class="fwhite">工商注册</a>
+                            </div>
+                            <div class="pt5">
+                                <a href="#" class="f14 fwhite mr10">公司注册</a>
+                                <a href="#" class="f14 fwhite">公司变更</a>
+                            </div>
+
+                            <div class="listbox list3">
+                                <div class="listbox-left">
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="listbox-right">
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="navh mt25 clearfix">
+                                <i class="icon navicon n1"></i>
+                                <a href="#" class="fwhite">工商注册</a>
+                            </div>
+                            <div class="pt5">
+                                <a href="#" class="f14 fwhite mr10">公司注册</a>
+                                <a href="#" class="f14 fwhite">公司变更</a>
+                            </div>
+
+                            <div class="listbox list4">
+                                <div class="listbox-left">
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>公司注册</dt>
+                                        <dd><a href="#" class="fred">有限公司注册</a></dd>
+                                        <dd><a href="#">分公司</a></dd>
+                                        <dd><a href="#">个人独资</a></dd>
+                                        <dd><a href="#">外资独资公司</a></dd>
+                                        <dd><a href="#">有限合伙</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="listbox-right">
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <dl class="clearfix">
+                                                <dt><i class="icon zhizhao"></i></dt>
+                                                <dd>
+                                                    <p class="dd1">公司注册</p>
+                                                    <p class="dd2">仅需4步</p>
+                                                </dd>
+                                            </dl>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-con">
+                <ul class="nav-list">
+                    <li><a href="" class="rednav">首页</a></li>
+                    <li><a href="">北京注册公司</a></li>
+                    <li><a href="">北京代理记账</a></li>
+                    <li><a href="">北京商标注册</a></li>
+                    <li><a href="">创业百科</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_visual">
+        <div class="flicking_con">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+        <div class="main_image">
+            <ul>
+                <li><span class="img_3"></span></li>
+                <li><span class="img_1"></span></li>
+                <li><span class="img_2"></span></li>
+            </ul>
+            <a href="javascript:;" id="btn_prev"></a>
+            <a href="javascript:;" id="btn_next"></a>
+        </div>
+    </div>
+    <div class="w100con num">
+        <div class="container">
+            <div class="num-sr">
+                <div class="f36 pr">
+                    <span id="fwqynum">0</span>
+                    <span class="jia">家</span>
+                </div>
+                <div class="f18">公司入驻</div>
+            </div>
+            <div class="num-sr">
+                <div class="f36 pr">
+                    <span id="snzcnum">0</span>
+                    <span class="jia">件</span>
+                </div>
+                <div class="f18">行业资质</div>
+            </div>
+            <div class="num-sr">
+                <div class="f36 pr">
+                    <span id="flfwnum">0</span>
+                    <span class="jia">件</span>
+                </div>
+                <div class="f18">知识产权</div>
+            </div>
+        </div>
+    </div>
+    <div class="w100con hometaocan ptb">
+        <div class="container">
+            <div class="home-title">精选套餐
+                <span class="k"></span>
+            </div>
+            <div class="home-con">
+                <div class="htaocan-con center-block smoove">
+                    <div><i class="icon hgs1"></i></div>
+                    <div class="htitle">公司注册(创业版)</div>
+                    <div class="hprice1">
+                        <span>原价：
+                            <span class="textlt">￥5000</span>
+                        </span>
+                        <span class="ml15">立省：￥1622</span>
+                    </div>
+                    <div class="hprice2">套餐价：￥3378</div>
+                    <div class="hbtn"><a href="#" class="btn-con">查看详情</a></div>
+                </div>
+                <div class="htaocan-con center-block smoove">
+                    <div><i class="icon hgs1"></i></div>
+                    <div class="htitle">公司注册(创业版)</div>
+                    <div class="hprice1">
+                        <span>原价：
+                            <span class="textlt">￥5000</span>
+                        </span>
+                        <span class="ml15">立省：￥1622</span>
+                    </div>
+                    <div class="hprice2">套餐价：￥3378</div>
+                    <div class="hbtn"><a href="#" class="btn-con">查看详情</a></div>
+                </div>
+                <div class="htaocan-con center-block smoove">
+                    <div><i class="icon hgs1"></i></div>
+                    <div class="htitle">公司注册(创业版)</div>
+                    <div class="hprice1">
+                        <span>原价：
+                            <span class="textlt">￥5000</span>
+                        </span>
+                        <span class="ml15">立省：￥1622</span>
+                    </div>
+                    <div class="hprice2">套餐价：￥3378</div>
+                    <div class="hbtn"><a href="#" class="btn-con">查看详情</a></div>
+                </div>
+                <div class="htaocan-con center-block smoove">
+                    <div><i class="icon hgs1"></i></div>
+                    <div class="htitle">公司注册(创业版)</div>
+                    <div class="hprice1">
+                        <span>原价：
+                            <span class="textlt">￥5000</span>
+                        </span>
+                        <span class="ml15">立省：￥1622</span>
+                    </div>
+                    <div class="hprice2">套餐价：￥3378</div>
+                    <div class="hbtn"><a href="#" class="btn-con">查看详情</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w100con zclb bggrey">
+        <div class="container">
+            <div class="home-title">精选套餐
+                <span class="k"></span>
+            </div>
+            <div class="zclb-con">
+                <ul class="clearfix">
+                    <li class="bggrey"><a href="#">商贸公司</a></li>
+                    <li><a href="#">科技公司</a></li>
+                    <li class="bggrey"><a href="#">电子商务公司</a></li>
+                    <li><a href="#">文化传媒(广告)</a></li>
+                    <li class="bggrey"><a href="#">软件/系统公司</a></li>
+                    <li><a href="#">中介服务</a></li>
+                    <li class="bggrey"><a href="#">企业管理咨询</a></li>
+                    <li><a href="#">餐饮公司</a></li>
+                    <li class="bggrey" style="width: 377px;"><a href="#">更多>></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="w100con news ptb">
+        <div class="container">
+            <div class="home-title">创业咨询
+                <span class="k"></span>
+            </div>
+            <div class="news-con">
+                <div class="news-con-l">
+                    <div class="hntitle">
+                        公司新闻
+                        <a href="#">更多</a>
+                    </div>
+                    <div class="news-con-list">
+                        <ul>
+                            <li>
+                                <div class="news-time clearfix">
+                                    <span class="news-time1">12</span>
+                                    <span class="news-time2">2016-10</span>
+                                </div>
+                                <div class="news-content clearfix">
+                                    <div class="news-con-title">
+                                        <a href="#">易公司联手田川●创客+开拓创业之路</a>
+                                    </div>
+                                    <p>
+                                        田川·创客+是由河南田川实业有限公司投资打造。是在当前经济发 展新常态下，响应政府“大众创业，万众创新”政策号召，创建的全 方位创新创业大平台.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-time clearfix">
+                                    <span class="news-time1">12</span>
+                                    <span class="news-time2">2016-10</span>
+                                </div>
+                                <div class="news-content clearfix">
+                                    <div class="news-con-title">
+                                        <a href="#">易公司联手田川●创客+开拓创业之路</a>
+                                    </div>
+                                    <p>
+                                        田川·创客+是由河南田川实业有限公司投资打造。是在当前经济发 展新常态下，响应政府“大众创业，万众创新”政策号召，创建的全 方位创新创业大平台.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-time clearfix">
+                                    <span class="news-time1">12</span>
+                                    <span class="news-time2">2016-10</span>
+                                </div>
+                                <div class="news-content clearfix">
+                                    <div class="news-con-title">
+                                        <a href="#">易公司联手田川●创客+开拓创业之路</a>
+                                    </div>
+                                    <p>
+                                        田川·创客+是由河南田川实业有限公司投资打造。是在当前经济发 展新常态下，响应政府“大众创业，万众创新”政策号召，创建的全 方位创新创业大平台.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="news-time clearfix">
+                                    <span class="news-time1">12</span>
+                                    <span class="news-time2">2016-10</span>
+                                </div>
+                                <div class="news-content clearfix">
+                                    <div class="news-con-title">
+                                        <a href="#">易公司联手田川●创客+开拓创业之路</a>
+                                    </div>
+                                    <p>
+                                        田川·创客+是由河南田川实业有限公司投资打造。是在当前经济发 展新常态下，响应政府“大众创业，万众创新”政策号召，创建的全 方位创新创业大平台.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="news-con-r">
+                    <div class="hntitle">
+                        创客百科
+                        <a href="#">更多</a>
+                    </div>
+                    <div class="news-media">
+                        <div class="srollbox" id="srollbox">
+                            <ul class="con1 saleInfo" id="con1">
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                                <li><a href="#">信息滚动效果制作</a>  <span>2016-11-17</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="hntitle">
+                        媒体报道
+                    </div>
+                    <div>
+                        <embed src="http://www.tudou.com/v/8KfrkARJd-A/&bid=05&rpid=830561802&resourceId=830561802_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="220"></embed>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w100con bgimg ptb">
+        <div class="container">
+            <div id="content"><div id="content_inner">
+                <ul id="slides1">
+                        <li>
+                            <img src="images/he-1.jpg" width="209" height="209" alt="Pic Mgmt" />
+                            <div class="content">
+                                <h3>MGMT</h3>
+                                <h4>Congratulations</h4>
+                                <p>Recording the follow-up to your critically-acclaimed debut album has to be a nerve-wracking affair. As a band, do you go with the same sound/formula you used on the first record? On MGMT’s sophomore album Congratulations, they successfully manage to do both.</p>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <img src="images/he-2.jpg" width="209" height="209" alt="Pic Lcd" />
+                            <div class="content">
+                                <h3>LCD Soundsystem</h3>
+                                <h4>This is Happening</h4>
+                                <p>If This Is Happening does end up being the final LCD Soundsystem release, Murphy certainly picked the right way to end it. “Home” hints at lyrical retrospection while
+                                adopting a musical collage that sums up the album, if not LCD’s three full-length releases, fittingly. </p>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <img src="images/he-3.jpg" width="209" height="209" alt="Pic Montreal" />
+                            <div class="content">
+                                <h3>of Montreal</h3>
+                                <h4>Skeletal Lamping</h4>
+                                <p>Kevin Barnes said about the title: "This record is my attempt to bring all of my puzzling, contradicting, disturbing, humorous...fantasies, ruminations and observations to
+                                the surface, so that I can better dissect and understand their reason for being in my head. Hence the title, Skeletal Lamping."</p>
+                          </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <img src="images/he-4.jpg" width="209" height="209" alt="Pic Gorillaz" />
+                            <div class="content">
+                                <h3>Gorillaz</h3>
+                                <h4>Demon Days</h4>
+                                <p>Demon Days is the second studio album by British band Gorillaz, released in May 2005. The album features contributions from De La Soul, Neneh Cherry, Martina Topley-Bird, Roots
+                                Manuva, MF DOOM, Ike Turner, Bootie Brown of the Pharcyde, and Dennis Hopper.</p>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w100con huoban">
+        <div class="container">
+            <div class="home-title">战略合作伙伴
+                <span class="k"></span>
+            </div>
+            <div class="huoban-con">
+                <ul class="clearfix">
+                    <li class="li-1 smoove"><div></div></li>
+                    <li class="li-2 smoove"><div></div></li>
+                    <li class="li-3"><div></div></li>
+                    <li class="li-4"><div></div></li>
+                    <li class="li-5"><div></div></li>
+                    <li class="li-6"><div></div></li>
+                    <li class="li-7 smoove"><div></div></li>
+                    <li class="li-8"><div></div></li>
+                    <li class="li-9 smoove"><div></div></li>
+                    <li class="li-10"><div></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-im">
+        <div id="open_im" class="open_im"></div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close_im">
+                <a href="javascript:void(0);"></a>
+            </div>
+            <a href="javascript:;" class="im-qq qq-a">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c">
+                    <img class="img-qq" src="images/qq.png" alt="">
+                </div>
+                <span> QQ在线咨询</span>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="w100con dbicon pb10 mb40">
+            <div class="container">
+                <ul>
+                    <li class="db1"></li>
+                    <li class="db2"></li>
+                    <li class="db3"></li>
+                    <li class="db4"></li>
+                    <li class="db5"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="w100con footer-con pb10 mb40" style="margin-top: 20px;">
+            <div class="container">
+                <div class="footer-conta">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="javascript:;">易公司简介</a></dd>
+                        <dd><a href="#">精英团队</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                    </dl>
+                </div>
+                <div class="footer-conta">
+                    <dl>
+                        <dt>产品服务</dt>
+                        <dd><a href="#">易公司简介</a></dd>
+                        <dd><a href="#">精英团队</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                    </dl>
+                </div>
+                <div class="footer-conta">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="#">易公司简介</a></dd>
+                        <dd><a href="#">精英团队</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                    </dl>
+                </div>
+                <div class="footer-conta">
+                    <dl>
+                        <dt>服务支持</dt>
+                        <dd><a href="#">易公司简介</a></dd>
+                        <dd><a href="#">精英团队</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                    </dl>
+                </div>
+                <div class="footer-conta1">
+                    <div class="footer-weixin">
+                        <img src="images/footer-qrcode.jpg" alt="" width="90" height="90">
+                        <p>关注微信</p>
+                    </div>
+                </div>
+                <div class="youqing">
+                    友情链接：<a href="#">小微OA</a><a href="#">河南大学生网</a><a href="#">一零二四科技</a><a href="#">郑商论坛</a><a href="#">MSDS查询</a><a href="#">创业项目网</a><a href="#">程序员客栈</a>
+                </div>
+            </div>
+        </div>
+        <div class="beian mt20">
+            <div class="container f-tac">
+                Copyright © 2016 易公司（eGongSi.cn） All Rights Reserved.
+                <br>
+                京ICP备15060737号
+            </div>
+        </div>
+    </div>
+    <div class="footerLayer">
+            <div class="close_ad"></div>
+            <div class="ad-con">广告弹层</div>
+    </div>
+    <!--jQuery手机图片全屏滑动轮播效果代码是一款基于jquery.event.drag-1.5.min.js、jquery.touchSlider.js和jquery-1.7.1.min.js等插件制作的图片轮播特效代码，兼容PC端和手机移动端，全屏宽屏显示，支持鼠标点击切换图片，鼠标拖拽切换图片，手机触摸滑动切换图片。-->
+    <script src="js/jquery.event.drag-1.5.min.js"></script>
+    <script src="js/jquery.touchSlider.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.smoove.min.js"></script>
+    <script src="js/jquery.carouFredSel.packed.js"></script>
+    <!--jQuery左右滑动的图片特效代码，基于jQuery的jquery.bxslider2.min.js插件实现，点击左下的小箭头，上方图片和文字一同和左滑动，点击一下滑动一个图片，本例主要可以学习使用jQuery插件制作网页动画效果，除了动画功能的实现外，这个特效的其它方面没有过多修饰，界面简陋。-->
+    <script src="js/jquery.bxslider2.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $(document).ready(function(){
+            var timer = null;
+            // if(timer){
+            //     clearInterval(timer);
+            //     timer=null;
+            // }
+            function autoShow(){//实现弹层广告点击关闭之后，隔断时间自己再次弹出来
+                if($(".footerLayer").hide()){
+                    $(".footerLayer").show();
+                }
+            }
+            $("#close_im").click(function(){
+                $(this).parent().hide();
+                $("#open_im").show();
+            });
+            $("#open_im").click(function(){
+                $(this).hide();
+                $("#im_main").show();
+            });
+            $(".close_ad").bind("click",function(){
+                $(this).parent().hide();
+                if(timer){
+                    clearInterval(timer);
+                    timer=null;
+                }
+                timer = setInterval(autoShow,2000);
+            });
+            //jQuery-smoove是一款jQuery和CSS3炫酷滚动页面内容元素动画特效插件。该内容元素动画插件在页面滚动到指定位置时，该位置的HTML元素会执行指定的CSS3动画特效，如旋转、翻转、放大缩小等动画特效。使用Smoove页面滚动元素动画特效插件可以很轻松的制作出各种华丽的CSS3动画效果。
+            $('.smoove').smoove({offset:'20%'});
+            //新闻滚动插件
+            $('.saleInfo').carouFredSel({
+                items: 6,
+                direction:'up',
+                scroll: {
+                    items: 1,
+                    duration: 400,
+                    timeoutDuration: 2000,
+                    easing: 'linear',
+                    pauseOnHover: 'immediate'
+                }
+            });
+
+    });
+    </script>
+</body>
+</html>

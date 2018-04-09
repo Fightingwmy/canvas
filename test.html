@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>下拉列表</title>
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.treemenu.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="js/sidebar-menu.js"></script>
+</head>
+<body>
+<div class="outcontainer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <ul class="sidebar-menu">
+                      <li class="header">PRODUCT CATEGORIES</li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Multilevel</span>
+                        <span class="drop-switch arrow-icon"></span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                        <li>
+                        <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                          <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                          <li>
+                          <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                          </ul>
+                          </li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                      </ul>
+                      </li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Forms</span>
+                        <span class="drop-switch arrow-icon"></span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li>
+                      </ul>
+                      </li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Tables</span>
+                        <span class="drop-switch arrow-icon"></span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><span class="drop-switch arrow-icon"></span> Simple tables</a></li>
+                        <li><span class="drop-switch arrow-icon"></span> Data tables</a></li>
+                      </ul>
+                      </li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Calendar</span>
+
+                      </a>
+                      </li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Mailbox</span>
+
+                      </a>
+                      </li>
+                      <li class="treeview">
+                      <a href="#">
+                        <span>Examples</span>
+                        <span class="drop-switch arrow-icon"></span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="#"><span class="drop-switch arrow-icon"></span> Invoice</a></li>
+                        <li><a href="#"><span class="drop-switch arrow-icon"></span> Profile</a></li>
+                      </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  $.sidebarMenu($('.sidebar-menu'))
+</script>
+
+</body>
+</html>
